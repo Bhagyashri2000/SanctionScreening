@@ -1,0 +1,8 @@
+html, body{min-height:100%;}
+/* body{height:100vh;} */
+
+ .background { 
+  background: url("D:/test_eclipse/angular/sanctionScreening/src/assets/b3.jpg") no-repeat center center fixed; 
+  background-size: 100% 100%;
+  min-height: 520px;
+}

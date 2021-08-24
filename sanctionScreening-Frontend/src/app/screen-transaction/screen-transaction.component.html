@@ -1,0 +1,64 @@
+<body>
+
+  <div class="background">
+    <h1>Sanction Screening</h1>
+
+    <div class="buttons">
+     <button class="Screening btn btn-success" (click)="screenTransaction()">
+        Sanction Screening
+      </button>
+   
+    <!-- onclick="style.display = 'none'" -->
+    
+    <div class="dropdown">
+      <button class="dropbtn btn btn-success">Transaction List</button>
+      <div class="dropdown-content">
+        <a (click)="getSelectedDropdown(0)" routerLink="validationPass" routerLinkActive="active">All Transactions</a>
+        <a (click)="getSelectedDropdown(1)" routerLink="validationPass" routerLinkActive="active">Validation Pass</a>
+        <a (click)="getSelectedDropdown(2)" routerLink="validationFail" routerLinkActive="active"
+          class="nav-link">Validation fail</a>
+        <a (click)="getSelectedDropdown(3)" routerLink="screenPass" routerLinkActive="active" class="nav-link">Screening
+          pass</a>
+        <a (click)="getSelectedDropdown(4)" routerLink="screenFail" routerLinkActive="active" class="nav-link">Screening
+          fail</a>
+      </div>
+    </div>
+  </div>
+<div *ngIf="bool==false" class="message_warning">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  warning : Please Upload File First
+</div>
+<div *ngIf="bool==true" class="message_successful">
+  <span class="closebtn" (click)="reload()">&times;</span> 
+  Sanction Screening Successful
+</div>
+
+
+    <table border="1" *ngIf="transactions.length>0">
+      <thead>
+        <tr>
+          <th> payer name</th>
+          <th> payer account</th>
+          <th> payee name </th>
+          <th> payee account</th>
+          <th> amount</th>
+          <th> Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let t of transactions">
+          <td> {{ t.payer_name }} </td>
+          <td> {{ t.payer_acc }} </td>
+          <td> {{ t.payee_name }} </td>
+          <td> {{ t.payee_acc }} </td>
+          <td> {{ t.amount }} </td>
+          <td> {{ t.status }} </td>
+
+        </tr>
+      </tbody>
+    </table>
+
+
+  </div>
+
+</body>

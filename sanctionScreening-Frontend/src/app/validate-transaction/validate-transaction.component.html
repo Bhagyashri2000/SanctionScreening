@@ -1,0 +1,19 @@
+<body>
+    <div class="background">
+        <br>
+        <form id='myForm' (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+                <label> Enter Excel File URL</label>
+                <input type="text" class="form-control" id="url" [(ngModel)]="fileUrl" name="url">
+            </div>
+            <button class="btn btn-success" type="submit">Submit</button>
+
+
+        </form>
+
+        <br><br>
+
+    </div>
+
+</body>
